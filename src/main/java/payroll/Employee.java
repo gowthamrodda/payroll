@@ -18,6 +18,13 @@ public class Employee {
     @Column(name = "name")
     private String name;
 
+    Employee() {}
+
+    Employee(String name, String role) {
+        this.name = name;
+        this.role = role;
+    }
+
     public String getRole() {
         return role;
     }
