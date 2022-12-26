@@ -27,7 +27,7 @@ public class EmployeeController {
     Employee one(@PathVariable Long id) {
         String msg = "Employee not found" + id;
         return repository.findById(id)
-                .orElseThrow();
+                .orElseThrow(() -> new EmployeeNotFoundException(id));
     }
 
     @PutMapping("/employees/{id}")
